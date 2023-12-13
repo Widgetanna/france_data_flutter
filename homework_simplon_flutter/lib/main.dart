@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:homework_simplon_flutter/app_router.dart';
 
 void main() {
+  debugShowMaterialGrid: false;
   runApp(const MainApp());
 }
 
