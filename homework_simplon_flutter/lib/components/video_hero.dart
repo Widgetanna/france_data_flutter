@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-
-
 class VideoHero extends StatefulWidget {
-  final String videoPath;
-
-  const VideoHero({
-    super.key,
-    required this.videoPath,
-  });
+  const VideoHero({Key? key}) : super(key: key);
 
   @override
   State<VideoHero> createState() => _VideoHeroState();
@@ -25,7 +18,7 @@ class _VideoHeroState extends State<VideoHero> {
   }
 
   void _initializeVideoController() {
-    _controller = VideoPlayerController.asset(widget.videoPath)
+    _controller = VideoPlayerController.asset('assets/video/v1.mp4')
       ..initialize().then((_) {
         print("Video initialization successful");
         setState(() {
@@ -44,7 +37,7 @@ class _VideoHeroState extends State<VideoHero> {
             aspectRatio: _controller.value.aspectRatio,
             child: VideoPlayer(_controller),
           )
-        : const CircularProgressIndicator();
+        : Container();
   }
 
   @override
